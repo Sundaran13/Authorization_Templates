@@ -492,19 +492,21 @@ word-wrap: break-word;" valign="top">
                                 </tr>
 
                                 <tr>
-                                {{#equals authorization_details_cloud_marketplace "AWS"}}
-                                    <td class="padded-l padded-r padded-t padded-b" style="padding-top: 16px; padding-bottom: 16px; padding-left: 24px; padding-right: 24px;">
-
-                                        <p style="font-family: 'Open Sans', sans-serif; font-size: 16px;line-height: 22px;
-              margin-bottom: 24px;color: #21233A">
-              
-                This Authorization has been published as a Resale Authorization. Your Channel Partner can access it through the AWS Marketplace Management Portal and create Private Offers based on this authorization.</p>
-                {{else}} {{#equals authorization_details_cloud_marketplace "AZURE"}}
-<p style="font-family: 'Open Sans', sans-serif; font-size: 16px;line-height: 22px;
-              margin-bottom: 24px;color: #21233A">
-                This Authorization has been published as a Multiparty Private Offer. Your Channel Partner can access it in their Microsoft Partner Center, make any necessary changes, and proceed to publish the offer to the end-customer.
-                                        </p>
-                                    {{/equals}}{{/equals}}
+                               {{#equals authorization_details_cloud_marketplace "AWS"}}
+        <td class="padded-l padded-r padded-t padded-b" style="padding-top: 16px; padding-bottom: 16px; padding-left: 24px; padding-right: 24px;">
+            <p style="font-family: 'Open Sans', sans-serif; font-size: 16px; line-height: 22px; margin-bottom: 24px; color: #21233A;">
+                This Authorization has been published as a Resale Authorization. Your Channel Partner can access it through the AWS Marketplace Management Portal and create Private Offers based on this authorization.
+            </p>
+        </td>
+    {{else}}
+        {{#equals authorization_details_cloud_marketplace "AZURE"}}
+            <td class="padded-l padded-r padded-t padded-b" style="padding-top: 16px; padding-bottom: 16px; padding-left: 24px; padding-right: 24px;">
+                <p style="font-family: 'Open Sans', sans-serif; font-size: 16px; line-height: 22px; margin-bottom: 24px; color: #21233A;">
+                    This Authorization has been published as a Multiparty Private Offer. Your Channel Partner can access it in their Microsoft Partner Center, make any necessary changes, and proceed to publish the offer to the end-customer.
+                </p>
+            </td>
+        {{/equals}}
+    {{/equals}}
                                         
                                         <p style="font-family: 'Open Sans', sans-serif; font-size: px;line-height: 22px;
               margin-bottom: 8px;color: #21233A">
