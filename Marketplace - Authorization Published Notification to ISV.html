@@ -374,31 +374,69 @@ padding: 8px 12px;
 font-size: 14px;
 line-height: 19px;
 word-wrap: break-word;" valign="top">
+ {{#equals authorization_details_cloud_marketplace "AWS"}} {{authorization_details_product_name}} {{else}} {{#equals authorization_details_cloud_marketplace "AZURE"}} {{#if authorization_details_product_name}} {{authorization_details_product_name}} {{else}} {{#each azure_authorization_details_azure_listing_names}}
+                                                                {{this}}{{#unless @last}}, {{/unless}} {{/each}} {{/if}} {{/equals}} {{/equals}}
                                                                 {{authorization_details_product_name}}
                                                             </td>
                                                         </tr>
+                                                          {{#equals authorization_details_cloud_marketplace "AWS"}}
                                                         <tr>
-                                                             <td class="label" style="font-weight: 400;
-color: #636480;
-border-right: 1px solid #EAE8F0;
-border-bottom: 1px solid #EAE8F0;
-padding: 8px 12px;
-font-size: 14px;
-line-height: 19px;
-word-wrap: break-word;" valign="top">
+                                                            <td class="label" style="font-weight: 400;
+        color: #636480;
+        border-right: 1px solid #EAE8F0;
+        border-bottom: 1px solid #EAE8F0;
+        padding: 8px 12px;
+        font-size: 14px;
+        line-height: 19px;
+        word-wrap: break-word;" valign="top">
                                                                 Authorization Link:
                                                             </td>
-                                                            <td class="label" style="font-weight: 400;
-color: #636480;
-border-right: 1px solid #EAE8F0;
-border-bottom: 1px solid #EAE8F0;
-padding: 8px 12px;
-font-size: 14px;
-line-height: 19px;
-word-wrap: break-word;" valign="top">
-                                                                {{authorization_details_authorization_link}}
+                                                            <td class="value" style="max-width: 492px;
+        font-weight: 400;
+        color: #21233A;
+        padding: 8px 12px;
+        border-bottom: 1px solid #EAE8F0;
+        font-size: 14px;
+        line-height: 19px;
+        word-wrap: break-word;" valign="top">
+                                                                <a href="{{offer_details_offer_link}}" style="font-family: 'Open Sans', sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 19px;
+            color: #2E3BCD;">{{authorization_details_authorization_link}}</a>
                                                             </td>
                                                         </tr>
+                                                        {{else}} {{#equals authorization_details_cloud_marketplace "AZURE"}}
+                                                        <tr>
+                                                            <td class="label" style="font-weight: 400;
+        color: #636480;
+        border-right: 1px solid #EAE8F0;
+        border-bottom: 1px solid #EAE8F0;
+        padding: 8px 12px;
+        font-size: 14px;
+        line-height: 19px;
+        word-wrap: break-word;" valign="top">
+                                                               Authorization Link:
+                                                            </td>
+                                                            <td class="value" style="max-width: 492px;
+        font-weight: 400;
+        color: #21233A;
+        padding: 8px 12px;
+        border-bottom: 1px solid #EAE8F0;
+        font-size: 14px;
+        line-height: 19px;
+        word-wrap: break-word;" valign="top">
+                                                                <a href="{{offer_details_azure_offer_link}}" style="font-family: 'Open Sans', sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 19px;
+            color: #2E3BCD;">{{azure_authorization_details_authorization_link}}</a>
+                                                            </td>
+                                                        </tr>
+                                                        {{/equals}} {{/equals}}
+
                                                      <tr>
                                                           <td class="label" style="font-weight: 400;
 color: #636480;
@@ -461,7 +499,7 @@ word-wrap: break-word;" valign="top">
               margin-bottom: 24px;color: #21233A">
               
                 This Authorization has been published as a Resale Authorization. Your Channel Partner can access it through the AWS Marketplace Management Portal and create Private Offers based on this authorization.</p>
-                {{#equals authorization_details_cloud_marketplace "AZURE"}}
+                {{else}} {{#equals authorization_details_cloud_marketplace "AZURE"}}
 <p style="font-family: 'Open Sans', sans-serif; font-size: 16px;line-height: 22px;
               margin-bottom: 24px;color: #21233A">
                 This Authorization has been published as a Multiparty Private Offer. Your Channel Partner can access it in their Microsoft Partner Center, make any necessary changes, and proceed to publish the offer to the end-customer.
