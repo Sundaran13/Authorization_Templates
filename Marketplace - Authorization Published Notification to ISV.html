@@ -282,6 +282,7 @@
                                                             </a>
                                                          </td>
                                                       </tr>
+                                                      {{#if created_by_person_name}}
                                                       <tr>
                                                          <td class="label" valign="top" style="font-weight: 400;
                                                             color: #636480;
@@ -304,6 +305,8 @@
                                                             {{created_by_person_name}}
                                                          </td>
                                                       </tr>
+                                                     {{/if}}
+                                            {{#if authorization_details_customer_name}}
                                                       <tr>
                                                          <td class="label" style="font-weight: 400;
                                                             color: #636480;
@@ -326,6 +329,7 @@
                                                             {{authorization_details_customer_name}}
                                                          </td>
                                                       </tr>
+                                                    {{/if}}
                                                       <tr>
                                                          <td class="label" style="font-weight: 400;
                                                             color: #636480;
