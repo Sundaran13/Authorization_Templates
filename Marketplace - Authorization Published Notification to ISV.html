@@ -226,7 +226,12 @@
                                              font-size: 16px;
                                              line-height: 22px;
                                              color: #21233A;">
-                                             Your Authorization has been successfully published on the {{authorization_details_cloud_marketplace}} Marketplace for {{authorization_details_customer_name}}. Please find the details of the Authorization below:
+                                             Your Authorization has been successfully published on the {{authorization_details_cloud_marketplace}} Marketplace 
+                                              {{#if authorization_details_customer_name}}
+                                              for
+                                             {{authorization_details_customer_name}}
+                                             {{/if}}.
+                                              Please find the details of the Authorization below:
                                           </p>
                                        </td>
                                     </tr>
